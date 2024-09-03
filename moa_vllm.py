@@ -2,6 +2,7 @@
 
 !git lfs clone https://huggingface.co/Qwen/Qwen2-0.5B-Instruct
 !git lfs clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+!git lfs clone https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct
 !pip install -q vllm
 """
 
@@ -24,8 +25,9 @@ user_prompt = "What are 3 fun things to do in SF?"
 reference_models = [
     "./Qwen2-0.5B-Instruct",
     "./Phi-3-mini-4k-instruct",
+    "./Meta-Llama-3.1-8B-Instruct"
 ]
-aggregator_model = "./Phi-3-mini-4k-instruct"
+aggregator_model = "./Meta-Llama-3.1-8B-Instruct"
 aggreagator_system_prompt = """You have been provided with a set of responses from various open-source models to the latest user query. Your task is to synthesize these responses into a single, high-quality response. It is crucial to critically evaluate the information provided in these responses, recognizing that some of it may be biased or incorrect. Your response should not simply replicate the given answers but should offer a refined, accurate, and comprehensive reply to the instruction. Ensure your response is well-structured, coherent, and adheres to the highest standards of accuracy and reliability.
 
 Responses from models:"""
